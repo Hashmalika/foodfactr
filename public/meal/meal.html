@@ -1,0 +1,122 @@
+<!-- meal.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meal Planner - FoodFactr</title>
+  <link rel="stylesheet" href="meal.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-leaf"></i>FoodFactr</h1>
+    <p class="tagline">Your personal diet and wellness companion</p>
+    <nav>
+      <ul>
+        <li><button id="dashboardBtn"><i class="fas fa-home"></i> Dashboard</button></li>
+        <li><button id="mealsBtn"><i class="fas fa-utensils"></i> Meal Plans</button></li>
+        <li><button id="trackerBtn"><i class="fas fa-chart-line"></i> Nutrition Tracker</button></li>
+        <li><button id="exerciseBtn"><i class="fas fa-dumbbell"></i> Exercise</button></li>
+        <li><button id="profileBtn"><i class="fas fa-user"></i> Profile</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="meal-toggle-buttons">
+    <button id="toggle-meal-plan" class="active">Meal Plan</button>
+    <!-- <button id="toggle-weekly-grid">Weekly Grid</button> -->
+    <button id="toggle-shopping-list">Shopping List</button>
+    <button id="toggle-recipe-book">Recipe Book</button>
+  </div>
+
+  <main>
+    <section id="meal-plan-section" class="toggle-section">
+      <h2 style="text-align: center; color: #4caf50;">Today's Meal Plan</h2>
+
+      <!-- Add Meal Toggle Button -->
+      <div style="text-align: center; margin: 1rem 0;">
+        <button id="showMealFormBtn" class="show-meal-form-btn"> Add Meal</button>
+      </div>
+
+      <!-- Meal Input Form (Initially hidden) -->
+      <form id="mealForm" class="meal-input-form" style="display: none;">
+        <h3 style="text-align: center; color: #4caf50;">Add Meal Plan</h3>
+        <label for="mealType">Meal Type</label>
+        <select name="mealType" required>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Dinner">Dinner</option>
+          <option value="Snack">Snack</option>
+        </select>
+
+        <label for="foodName">Food Name</label>
+        <input type="text" name="foodName" required />
+
+        <label for="calories">Calories</label>
+        <input type="number" name="calories" required />
+
+        <label for="protein">Protein (g)</label>
+        <input type="number" name="protein" />
+
+        <label for="carbs">Carbs (g)</label>
+        <input type="number" name="carbs" />
+
+        <label for="fat">Fat (g)</label>
+        <input type="number" name="fat" />
+        <button type="submit">Submit Meal</button>
+      </form>
+
+      <!-- Meal Cards Display -->
+      <div id="mealCards" class="meal-cards-container">
+        <!-- JS will inject .detailed-meal-card here -->
+      </div>
+    </section>
+
+    
+    <section id="shopping-list-section" class="toggle-section" style="display: none;">
+      <h2>Shopping List</h2>
+
+        <!-- Search bar -->
+      <div class="shopping-search-bar">
+           <input type="text" id="shoppingSearchInput" placeholder="Search ingredients for a meal...">
+            <button id="shoppingSearchBtn" type="button"> Search</button>
+     </div>
+
+     
+
+      <!-- Item cards -->
+       <ul id="ingredientResults" class="ingredient-cards">
+           <!-- Cards will be injected here -->
+       </ul>
+   </section>
+
+
+
+    <section id="recipe-book-section" class="toggle-section" style="display: none;">
+        <h2>Recipe Book</h2>
+         <p>Search any meal name to discover recipes.</p>
+
+       <!-- Search bar -->
+       <div class="recipe-book-search">
+           <input type="text" id="recipeSearchInput" placeholder="Search recipe..." />
+            <button id="recipeSearchBtn">Search</button>
+       </div>
+
+          <!-- Container where recipe cards will be injected -->
+        <div id="recipeResults" class="recipe-results-container"></div>
+   </section>
+
+  </main>
+
+  <div id="recipeModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="recipeTitle"></h3>
+      <p id="recipeDetails"></p>
+    </div>
+  </div>
+
+  <script src="meal.js"></script>
+</body>
+</html>

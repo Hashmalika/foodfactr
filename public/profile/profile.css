@@ -1,0 +1,233 @@
+/* body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.profile-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #ff5722;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+input[type="range"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00796b;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #005b4f;
+}
+
+#dietLabel {
+    margin-top: 10px;
+    font-weight: bold;
+} */
+
+
+/* Profile Page CSS for NutriTrack App */
+
+/* Base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8fcf8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Profile Container */
+.profile-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.profile-container h1 {
+    color: #3d8b40;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 1rem;
+}
+
+/* Form styling */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #4caf50;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+/* Checkbox group styling */
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    background-color: #f1f8e9;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.checkbox-group label:hover {
+    background-color: #e8f5e9;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #4caf50;
+}
+
+/* Submit button */
+button[type="submit"] {
+    background: linear-gradient(135deg, #7dc67d, #4caf50);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Back link */
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .checkbox-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .checkbox-group label {
+        width: 100%;
+    }
+}
+
+/* Add a header to match main page */
+.profile-header {
+    background: linear-gradient(135deg, #7dc67d, #4caf50);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}

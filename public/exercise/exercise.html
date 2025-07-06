@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodFactr - Exercise Diary</title>
+  <link rel="stylesheet" href="exercise.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-leaf"></i>FoodFactr</h1>
+    <p class="tagline">Your personal diet and wellness companion</p>
+    <nav>
+      <ul>
+        <li><button id="dashboardBtn"><i class="fas fa-home"></i> Dashboard</button></li>
+        <li><button id="mealsBtn"><i class="fas fa-utensils"></i> Meal Plans</button></li>
+        <li><button id="trackerBtn"><i class="fas fa-chart-line"></i> Nutrition Tracker</button></li>
+        <li><button id="exerciseBtn" class="active"><i class="fas fa-dumbbell"></i> Exercise</button></li>
+        <li><button id="profileBtn"><i class="fas fa-user"></i> Profile</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="diary">
+        <h1>Your Exercise Diary for:</h1>
+        <div class="diary-date-controls">
+          <a class="prev" href="#" id="prevDay"><i class="fas fa-chevron-left"></i></a>
+          <time id="currentDate"></time>
+          <a class="next" href="#" id="nextDay"><i class="fas fa-chevron-right"></i></a>
+          <i class="fas fa-calendar-alt" id="datepicker-trigger"></i>
+          <input type="date" id="date-selector" class="hidden" />
+        </div>
+
+        <!-- Cardio Table -->
+        <table class="exercise-table" id="cardio-diary">
+          <thead>
+            <tr>
+              <td class="first">Cardiovascular</td>
+              <td>Minutes</td>
+              <td>Calories Burned</td>
+              <td class="actions"></td>
+            </tr>
+          </thead>
+          <tbody id="cardio-exercises">
+            <tr class="bottom">
+              <td class="first">
+                <a class="add-exercise" href="#" id="add-cardio"><i class="fas fa-plus-circle"></i> Add Exercise</a>
+                <div class="quick-tools">
+                  <a href="#" class="toggle-diary-options" data-toggle="quick-tools-cardio">Quick Tools</a>
+                  <div id="quick-tools-cardio" class="quick-tools-dropdown hidden">
+                    <ul>
+                      <li><a href="#" class="copy-yesterday" data-type="cardio">Copy yesterday</a></li>
+                      <li><a href="#" class="copy-from-date" data-type="cardio">Copy from date</a></li>
+                      <li><a href="#" class="copy-to-date" data-type="cardio">Copy to date</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </td>
+              <td></td>
+              <td></td>
+              <td class="actions"></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td class="first"><span class="soFar">Daily Total / </span><span class="goal">Goal</span></td>
+              <td><span class="soFar" id="cardio-minutes-total">0</span> / <span class="goal" id="cardio-minutes-goal">0</span></td>
+              <td><span class="soFar" id="cardio-calories-total">0</span> / <span class="goal" id="cardio-calories-goal">0</span></td>
+              <td class="empty"></td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <!-- Strength Table -->
+        <table class="exercise-table" id="strength-diary">
+          <thead>
+            <tr>
+              <td class="first">Strength Training</td>
+              <td>Sets</td>
+              <td>Reps/Set</td>
+              <td>Weight/Set</td>
+              <td class="actions"></td>
+            </tr>
+          </thead>
+          <tbody id="strength-exercises">
+            <tr class="bottom">
+              <td class="first">
+                <a class="add-exercise" href="#" id="add-strength"><i class="fas fa-plus-circle"></i> Add Exercise</a>
+                <div class="quick-tools">
+                  <a href="#" class="toggle-diary-options" data-toggle="quick-tools-strength">Quick Tools</a>
+                  <div id="quick-tools-strength" class="quick-tools-dropdown hidden">
+                    <ul>
+                      <li><a href="#" class="copy-yesterday" data-type="strength">Copy yesterday</a></li>
+                      <li><a href="#" class="copy-from-date" data-type="strength">Copy from date</a></li>
+                      <li><a href="#" class="copy-to-date" data-type="strength">Copy to date</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="actions"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="notes-section">
+          <h4>Today's Exercise Notes</h4>
+          <div id="note-display">
+            <p class="edit-note"><a href="#" id="edit-note-btn">Edit Note</a></p>
+            <p class="note-content" id="note-content"></p>
+          </div>
+          <div id="note-editor" class="hidden">
+            <p class="edit-note"><a href="#" id="save-note-btn">Save Note</a></p>
+            <textarea id="note-body"></textarea>
+          </div>
+        </div>
+
+        <div class="report-btn-container">
+          <a class="report-button" href="#" id="view-report">
+            <i class="fas fa-file-alt"></i> View Full Report (Printable)
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="exercise-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modal-title">Add Exercise</h2>
+        <span class="close-modal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <form id="exercise-form">
+          <input type="hidden" id="exercise-type" name="type" value="cardio" />
+
+          <div class="form-group">
+            <label for="exercise-name">Exercise:</label>
+            <input type="text" id="exercise-name" name="name" placeholder="e.g., Running, Squats" />
+          </div>
+
+          <div id="cardio-fields">
+            <label for="exercise-minutes">Minutes:</label>
+            <input type="number" id="exercise-minutes" name="minutes" min="1" value="30" />
+
+            <label for="exercise-calories">Calories Burned:</label>
+            <input type="number" id="exercise-calories" name="calories" min="1" value="100" />
+          </div>
+
+          <div id="strength-fields" class="hidden">
+            <label for="exercise-sets">Sets:</label>
+            <input type="number" id="exercise-sets" name="sets" min="1" value="3" />
+
+            <label for="exercise-reps">Reps per Set:</label>
+            <input type="number" id="exercise-reps" name="reps" min="1" value="10" />
+
+            <label for="exercise-weight">Weight per Set (lbs):</label>
+            <input type="number" id="exercise-weight" name="weight" min="0" value="0" />
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="primary-btn">Add Exercise</button>
+            <button type="button" class="secondary-btn" id="cancel-exercise">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 FoodFactr - Your Health Companion</p>
+    <div class="footer-links">
+      <a href="#" id="aboutBtn">About</a>
+      <a href="#" id="contactBtn">Contact</a>
+      <a href="#" id="privacyBtn">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="exercise-diary.js"></script>
+</body>
+</html>

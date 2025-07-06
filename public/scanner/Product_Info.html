@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Catalogue</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .product-container { max-width: 600px; margin: auto; border: 1px solid #ddd; border-radius: 10px; padding: 20px; }
+    img { max-width: 100%; height: auto; border-radius: 8px; }
+    h2 { margin-top: 0; }
+    ul { padding-left: 20px; }
+    .label { font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <div class="product-container" id="productInfo">
+    <p>Loading product details...</p>
+  </div>
+
+  <script>
+    const product = JSON.parse(localStorage.getItem('lastScannedProduct'));
+
+    if (product) {
+      const container = document.getElementById('productInfo');
+      container.innerHTML = `
+        <h2>${product.name}</h2>
+        <img src="${product.image || 'https://via.placeholder.com/150?text=No+Image'}" alt="Product Image">
+        <p><span class="label">Category:</span> ${product.category}</p>
+        <p><span class="label">Format:</span> ${product.format}</p>
+        <p><span class="label">Prediction:</span> ${product.prediction || 'N/A'}</p>
+        <h3>Nutrition Facts (per 100g)</h3>
+        <ul>
+          <li><strong>Calories:</strong> ${product.nutritionFacts.calories}</li>
+          <li><strong>Protein:</strong> ${product.nutritionFacts.protein}g</li>
+          <li><strong>Carbs:</strong> ${product.nutritionFacts.carbs}g</li>
+          <li><strong>Fat:</strong> ${product.nutritionFacts.fat}g</li>
+          <li><strong>Sugar:</strong> ${product.nutritionFacts.sugar}g</li>
+          <li><strong>Sodium:</strong> ${product.nutritionFacts.sodium}mg</li>
+        </ul>
+        <h3>Ingredients</h3>
+        <ul>${product.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
+        <h3>Allergens</h3>
+        <ul>${product.allergens.length ? product.allergens.map(a => `<li>${a}</li>`).join('') : '<li>None listed</li>'}</ul>
+      `;
+    } else {
+      document.getElementById('productInfo').innerHTML = '<p>No product data found.</p>';
+    }
+  </script>
+
+</body>
+</html>

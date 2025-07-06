@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Details - FoodFactr</title>
+  <link rel="stylesheet" href="styless.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+</head>
+<body>
+
+  <header>
+    <h1><i class="fas fa-leaf"></i> FoodFactr</h1>
+
+    <p class="tagline">Know what you eat – healthier choices start here!</p>
+  </header>
+
+  <main>
+    <section>
+      <div class="stat-card">
+        <img src="https://placehold.co/400x250?text=Product+Label" alt="Product Label" class="product-image" style="max-width: 100%; border-radius: 10px;"/>
+        <div class="stat-info" style="padding-left: 1rem;">
+          <h2 class="product-title">Parle-G Biscuits</h2>
+          <p class="product-details">Classic biscuits made with wheat flour and sugar, 450 kcal per 100g</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Nutritional Information (per 100g)</h2>
+      <ul class="nutrition-list">
+        <!-- Highlighting sugar in red as harmful -->
+        <li class="nutrition-item"><span>Sugar:</span> <span class="nutrition-value harmful">20g</span> <span class="warning-badge">High</span></li>
+        <!-- Highlighting fat with caution -->
+        <li class="nutrition-item"><span>Total Fat:</span> <span class="nutrition-value caution">10g</span> <span class="caution-badge">Moderate</span></li>
+        <li class="nutrition-item"><span>Saturated Fat:</span> <span class="nutrition-value harmful">6g</span> <span class="warning-badge">High</span></li>
+        <!-- Highlighting essential nutrients in green -->
+        <li class="nutrition-item"><span>Protein:</span> <span class="nutrition-value essential">5g</span><span class="safe-badge">Safe</span></li>
+        <li class="nutrition-item"><span>Fiber:</span> <span class="nutrition-value essential">1.5g</span><span class="safe-badge">Safe</span></li>
+       </ul>
+    </section>
+
+    <section>
+        <h2>Health Analysis</h2>
+      
+        <div class="tooltip-btn">
+          Nutritional Insights
+          <div class="tooltip-text">High in sugar and calories. Consider lower-sugar alternatives.</div>
+        </div>
+      
+        <div class="tooltip-btn">
+          Processing Level
+          <div class="tooltip-text">Highly processed; consider whole food options.</div>
+        </div>
+      
+        <div class="tooltip-btn">
+          Diet Compatibility
+          <div class="tooltip-text">Not suitable for diabetic diets.</div>
+        </div>
+      
+        <div class="tooltip-btn">
+          Misleading Claims
+          <div class="tooltip-text">Sugar-free may imply a lack of calories but contains high sugar alcohols.</div>
+        </div>
+      </section>
+      
+
+    <section>
+      <h2>Nutritional Insights Dashboard</h2>
+      <div class="image-container" style="text-align: center;">
+        <img src="Nutritional_insights (1).png" alt="Nutritional Insights Visualization" class="nutrition-visualization" style="max-width: 100%; border-radius: 10px;" />
+      </div>
+    </section>
+
+    <section>
+      <h2>Health Tips</h2>
+      <ul>
+        <li>Opt for products with <strong>less than 5g of sugar</strong> per serving.</li>
+        <li>Incorporate more <strong>fiber-rich snacks</strong> into your diet.</li>
+        <li>Monitor your <strong>sodium intake</strong> for better heart health.</li>
+      </ul>
+    </section>
+    
+    <div class="button-container" style="display: flex; gap: 1rem; justify-content: center;">
+        <button class="btn-primary">Item Consumed</button>
+        <button class="btn-secondary">Add to Wishlist</button>
+    </div>
+
+    <br>
+    
+    <section>
+      <h2>Recommended Alternatives</h2>
+      <ul class="snack-list" style="display: flex; gap: 1rem; flex-wrap: wrap; list-style: none; justify-content: space-around;">
+        <li class="snack-item">
+          <img src="https://placehold.co/300x250?text=Oats+Cookies" alt="Oats Cookies" style="width: 100%; max-width: 250px; border-radius: 8px;" />
+          <div>Oats Cookies</div>
+        </li>
+        <li class="snack-item">
+          <img src="https://placehold.co/300x250?text=Dark+Chocolate+Snack+Bars" alt="Dark Chocolate Snack Bars" style="width: 100%; max-width: 250px; border-radius: 8px;" />
+          <div>Dark Chocolate Snack Bars</div>
+        </li>
+        <li class="snack-item">
+          <img src="https://placehold.co/300x250?text=Whole+Grain+Crackers" alt="Whole Grain Crackers" style="width: 100%; max-width: 250px; border-radius: 8px;" />
+          <div>Whole Grain Crackers</div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 FoodFactr. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy</a>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

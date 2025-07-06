@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodFactr - Your Health Companion</title>
+    <link rel="stylesheet" href="/dashboard/styless.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-leaf"></i>FoodFactr</h1>
+        <p class="tagline">Your personal diet and wellness companion</p>
+        <nav>
+            <ul>
+                <li><button id="dashboardBtn"><i class="fas fa-home"></i> Dashboard</button></li>
+                <!-- <li><button id="scanBtn" class="scan-btn"><i class="fas fa-qrcode"></i> Scan Product</button></li> -->
+                <li><button id="mealsBtn"><i class="fas fa-utensils"></i> Meal Plans</button></li>
+                <li><button id="trackerBtn"><i class="fas fa-chart-line"></i> Nutrition Tracker</button></li>
+                <li><button id="exerciseBtn"><i class="fas fa-dumbbell"></i> Exercise</button></li>
+                <li><button id="profileBtn"><i class="fas fa-user"></i> Profile</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+    
+        </div>
+        <section class="welcome-section">
+            <h2 class="welcome-message"></h2>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-fire"></i></div>
+                    <div class="stat-info">
+                        <h3>Daily Calories</h3>
+                        <p class="calories-stat"></p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 72%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-tint"></i></div>
+                    <div class="stat-info">
+                        <h3>Water Intake</h3>
+                        <p class="water-stat"></p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 62%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-walking"></i></div>
+                    <div class="stat-info">
+                        <h3>Steps</h3>
+                        <p class="steps-stat"></p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="meal-plan-section">
+            <h2 class="meal-section-title">Your Personalized Meal Plan</h2>
+            <div class="meal-cards">
+                <!-- <div class="meal-card">
+                    <div class="meal-time"></div>
+                    <div class="meal-content">
+                        <h3></h3>
+                        <p></p>
+                        <div class="meal-nutrition"></div>
+                    </div>
+                </div> -->
+                
+                <!-- <div class="meal-card">
+                    <div class="meal-time"></div>
+                    <div class="meal-content">
+                        <h3></h3>
+                        <p></p>
+                        <div class="meal-nutrition"></div>
+                    </div>
+                </div>
+                 -->
+                <!-- <div class="meal-card">
+                    <div class="meal-time"></div>
+                    <div class="meal-content">
+                        <h3></h3>
+                        <p></p>
+                        <div class="meal-nutrition"></div>
+                    </div>
+                </div> -->
+                
+                <!-- <div class="meal-card">
+                    <div class="meal-time"></div>
+                    <div class="meal-content">
+                        <h3></h3>
+                        <p></p>
+                        <div class="meal-nutrition"></div>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Scanner Modal -->
+    <div id="scannerModal" class="scanner-modal">
+        <div class="scanner-content">
+            <div class="scanner-header">
+                <h2><i class="fas fa-qrcode"></i> Scan Product QR Code</h2>
+                <span class="close-scanner">&times;</span>
+            </div>
+            <div class="scanner-body">
+                <div class="video-container">
+                    <div id="qr-video"></div>
+                    <div class="scanner-overlay">
+                        <div class="scanner-crosshair"></div>
+                    </div>
+                    <div id="scan-feedback" class="scan-feedback"></div>
+                </div>
+                <button id="flashlightBtn" class="flashlight-btn"><i class="fas fa-bolt"></i> Toggle Flashlight</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 FoodFactr - Your Health Companion</p>
+        <div class="footer-links">
+            <a href="#" id="aboutBtn">About</a>
+            <a href="#" id="contactBtn">Contact</a>
+            <a href="#" id="privacyBtn">Privacy Policy</a>
+        </div>
+    </footer>
+    
+    <script src="/dashboard/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+</body>
+</html>

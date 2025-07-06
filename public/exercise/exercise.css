@@ -1,0 +1,344 @@
+
+/* NutriTrack - Health Dietary App Theme CSS */
+
+/* Base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8fcf8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styling */
+header {
+    background: linear-gradient(135deg, #7dc67d, #4caf50);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tagline {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+/* Navigation styling */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+nav button {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav button:hover {
+    background-color: white;
+    color: #4caf50;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Base and Theme Variables */
+:root {
+  --primary-color: #4caf50;
+  --secondary-color: #66bb6a;
+}
+
+/* Diary Section Heading */
+.diary h1 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Updated Diary Date Controls */
+.diary-date-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  padding: 15px;
+  background: linear-gradient(135deg, #7dc67d, #4caf50);
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.diary-date-controls time {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.diary-date-controls a,
+#datepicker-trigger {
+  color: white;
+  font-size: 1.2rem;
+  background-color: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.diary-date-controls a:hover,
+#datepicker-trigger:hover {
+  background-color: rgba(255,255,255,0.25);
+}
+
+/* Tables */
+.exercise-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.exercise-table thead td {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 14px 16px;
+  font-weight: bold;
+}
+
+.exercise-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.exercise-table tfoot {
+  background-color: #f9f9f9;
+}
+
+.exercise-table tfoot .soFar {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.exercise-table tfoot .goal {
+  color: #888;
+}
+
+.exercise-table .actions {
+  width: 60px;
+  text-align: right;
+}
+
+.exercise-table .actions button {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+}
+
+.exercise-table .actions button:hover {
+  color: var(--primary-color);
+}
+
+/* Form Toggle Buttons */
+.toggle-form-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-form-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Forms */
+#cardio-form, #strength-form {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Notes Section */
+.notes-section {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.notes-section h4 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.edit-note {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.edit-note a {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.note-content {
+  color: #444;
+  min-height: 60px;
+}
+
+#note-body {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  resize: vertical;
+}
+
+/* Report Button */
+.report-btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.report-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.report-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Section Toggle Styling (dashboard-like) */
+.section-toggle {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
+
+.section-toggle button {
+  background: #e0f2f1;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: #388e3c;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.section-toggle button.active,
+.section-toggle button:hover {
+  background: #4caf50;
+  color: white;
+}
+
+/* Floating Scan Button */
+.floating-scan-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #7dc67d, #4caf50);
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 999;
+}
+
+.floating-scan-btn:hover {
+  transform: translateY(-4px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .exercise-table td:nth-child(3),
+  .exercise-table thead td:nth-child(3),
+  .exercise-table tfoot td:nth-child(3) {
+    display: none;
+  }
+
+  .diary-date-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .floating-scan-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+  }
+}
+
+@media (max-width: 480px) {
+  .exercise-table td:nth-child(2),
+  .exercise-table thead td:nth-child(2),
+  .exercise-table tfoot td:nth-child(2) {
+    display: none;
+  }
+}
