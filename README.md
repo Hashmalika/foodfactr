@@ -6,15 +6,15 @@ FoodFactr is a full-stack web application designed to help users monitor their d
 
 Key features include:
 
-* Barcode scanner using Quagga.js to identify packaged food items
+* Barcode scanner using Quagga.js to identify packaged food items  (yet to connect with backend)
 
 * Meal planning with nutritional breakdown (calories, protein, carbs, fat)
 
-* Exercise diary with cardio/strength logging, calorie burn estimates, and notes
+* Exercise diary with cardio/strength logging, calorie burn estimates, and notes (yet to complete)
 
-* Profile section to customize dietary goals and preferences
+* Profile section to customize dietary goals and preferences 
 
-* Nutrition tracker for daily and weekly progress visualization
+* Nutrition tracker for daily and weekly progress visualization (yet to complete)
 
 * Product lookup from a MongoDB-based food database
 
